@@ -1,5 +1,10 @@
 <p id="notice"><%= notice %></p>
 
+<%= form_tag import_invoices_path, multipart: true do %>  
+  <%= file_field_tag :file %>
+  <%= submit_tag "Import invoices" %>
+<% end %>
+
 <h1>Invoices</h1>
 
 <table>

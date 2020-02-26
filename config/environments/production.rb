@@ -63,6 +63,17 @@ Rails.application.configure do
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "notifier_#{Rails.env}"
 
+  config.action_mailer.delivery_method = :smtp
+  # SMTP settings for ascheri
+  config.action_mailer.smtp_settings = {
+   :address              => "smtp.livemail.co.uk",
+   :port                 => 587,
+   :user_name            => ENV['email_username'],
+   :password             => ENV['email_password'],
+   :authentication       => "plain",
+   :enable_starttls_auto => true
+  }
+
   config.action_mailer.perform_caching = false
 
   # Ignore bad email addresses and do not raise email delivery errors.

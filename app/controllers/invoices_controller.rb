@@ -7,6 +7,12 @@ class InvoicesController < ApplicationController
     @invoices = Invoice.all
   end
 
+  def import
+   
+    Invoice.import(params[:file])
+    redirect_to root_path, notice: "Invoices imported"
+  end
+
   # GET /invoices/1
   # GET /invoices/1.json
   def show
@@ -21,13 +27,16 @@ class InvoicesController < ApplicationController
   def edit
   end
 
+
   # POST /invoices
   # POST /invoices.json
   def create
     @invoice = Invoice.new(invoice_params)
 
+
     respond_to do |format|
       if @invoice.save
+
         format.html { redirect_to @invoice, notice: 'Invoice was successfully created.' }
         format.json { render :show, status: :created, location: @invoice }
       else
@@ -69,6 +78,6 @@ class InvoicesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def invoice_params
-      params.require(:invoice).permit(:name, :num, :date, :amount)
+      params.require(:invoice).permit(:name, :num, :date, :amount, :customer_id)
     end
 end

@@ -7,6 +7,11 @@ class CustomersController < ApplicationController
     @customers = Customer.all
   end
 
+  def import
+    Customer.import(params[:file])
+    redirect_to customers_path, notice: "Customers imported"
+  end
+
   # GET /customers/1
   # GET /customers/1.json
   def show
