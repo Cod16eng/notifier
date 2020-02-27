@@ -68,10 +68,10 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
    :address              => "smtp.livemail.co.uk",
    :port                 => 587,
-   :user_name            => ENV['email_username'],
-   :password             => ENV['email_password'],
+   :user_name            => ENV['E_USERNAME'],
+   :password             => ENV['E_PASSWORD'],
    :authentication       => "plain",
-   :enable_starttls_auto => true
+   :enable_starttls_auto => false
   }
 
   config.action_mailer.perform_caching = false
