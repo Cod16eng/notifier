@@ -1,5 +1,14 @@
+
 <% flash.each do |key, value| %>
-
-  	<div class="<%= flash_class(key) %>"><%= value %></div>
-
+  <% alert_class = case key
+                   when 'notice' then "info"
+                   when 'alert' then "warning"
+                   when 'success' then "success"
+                   when 'error' then "danger"
+                   else key
+                   end %>
+  <%= content_tag :div, class: "alert alert-#{alert_class}" do %>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <%= value %>
+  <% end %>
 <% end %>

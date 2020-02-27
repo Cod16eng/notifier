@@ -10,11 +10,17 @@
   </head>
 
   <body>
+    <% unless controller_name == 'sessions' %>
+
     <%= render 'layouts/navbar' %>
+    <% end %>
     <div class="container">
       <%= render 'layouts/flashmsg' %>
       <%= yield %>
     </div>
+    <% unless controller_name == 'sessions' %>
+    
     <%= render 'layouts/footer' %>
+    <% end %>
   </body>
 </html>

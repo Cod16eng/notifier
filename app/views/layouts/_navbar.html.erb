@@ -14,8 +14,22 @@
         <%= link_to "Customers", customers_path, class:"nav-link" %>
       </li>
       <li class="nav-item <%= "active" if current_page?(customers_path) %>">
-        <%= link_to "Users", customers_path, class:"nav-link" %>
+        <%= link_to "Users", users_path, class:"nav-link" %>
       </li>
+    </ul>
+    <ul class="navbar-nav float-right">
+      <% if (logged_in?) %>
+      <li class="nav-item">
+        <%= link_to current_user.username, user_path(current_user), class:"nav-link" %>
+      </li>
+        <li class="nav-item">
+          <%= link_to "Logout", logout_path, method: :delete, class:"nav-link" %>
+        </li>
+      <% else %>
+        <li class="nav-item">
+          <%= link_to "Login", login_path, class:"nav-link" %>
+        </li>
+      <% end %>
     </ul>
   </div>
   </div>
