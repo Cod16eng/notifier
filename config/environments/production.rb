@@ -65,16 +65,9 @@ Rails.application.configure do
 
   config.action_mailer.delivery_method = :smtp
   # SMTP settings for ascheri
-  config.action_mailer.smtp_settings = {
-   :address              => "smtp.livemail.co.uk",
-   :port                 => 587,
-   :user_name            => ENV['E_USERNAME'],
-   :password             => ENV['E_PASSWORD'],
-   :authentication       => "plain",
-   :enable_starttls_auto => false
-  }
-
   
+
+
 
   config.action_mailer.perform_caching = false
 

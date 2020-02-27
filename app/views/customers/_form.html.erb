@@ -16,11 +16,9 @@
           <%= form.label :email %>
           <%= form.text_field :email, class:"form-control" %>
         </div>
-      </div>  
-        <div class="card-footer">
-          <div class="row justify-content-center">
+      </div>
+        <div class="card-footer text-center">
             <%= form.button(@customer.new_record? ? 'Create Customer <i class="fas fa-paper-plane"></i>'.html_safe : 'Update Customer <i class="fas fa-paper-plane"></i>'.html_safe, class: 'btn btn-success btn-sm') %>
-          </div>
         </div>
         <% end %>
 
