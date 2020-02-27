@@ -1,5 +1,10 @@
-<h1>New Invoice</h1>
-
 <%= render 'form', invoice: @invoice %>
 
-<%= link_to 'Back', invoices_path %>
+<div class="clear-fix"><br></div>
+
+<div class="row">
+  <div class="col-md-12 d-flex justify-content-center">
+    <%= link_to 'Back', invoices_path, class:"btn btn-outline-secondary btn-sm" %>
+  </div>
+</div>
+<div class="clear-fix"><br></div>

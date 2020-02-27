@@ -1,5 +1,5 @@
 class NotifyMailer < ApplicationMailer
-  default from: "codrin@ascheri.co.uk"
+  default from: "info@ascheri.co.uk"
 
   def notify_email(customer)
     @customer = customer

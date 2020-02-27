@@ -25,11 +25,11 @@ ActiveRecord::Schema.define(version: 2020_02_26_120007) do
   create_table "invoices", force: :cascade do |t|
     t.string "name"
     t.string "num"
+    t.integer "customer_id"
     t.date "date"
     t.float "amount"
     t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "customer_id"
+    t.datetime "updated_at", null: false    
   end
 
 end

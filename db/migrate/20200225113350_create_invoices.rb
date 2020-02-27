@@ -3,6 +3,7 @@ class CreateInvoices < ActiveRecord::Migration[5.2]
     create_table :invoices do |t|
       t.string :name
       t.string :num
+      t.integer :customer_id
       t.date :date
       t.float :amount, :precision => 12, :scale => 2
 

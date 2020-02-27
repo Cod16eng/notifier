@@ -1,14 +1,26 @@
-<p id="notice"><%= notice %></p>
+<div class="clear-fix"><br></div>
+<div class="row">
+  <div class="col-3">
+    <h4 class="text-center">Import Invoices</h4>
+    <div class="clear-fix"><br></div>
+      <%= form_tag import_invoices_path, multipart: true do %>
+        <div class="custom-file">
+          <%= file_field_tag :file, class:'custom-file-input' %>
+          <%= label_tag 'file', "Choose File", class: 'custom-file-label' %>
+        </div>
+        <div class="clear-fix"><br></div>
+        <div class="text-center">
+          <%= submit_tag "Import invoices", class:"btn btn-outline-success" %>
+        </div>
+      <% end %>
+  </div>
+  <div class="col-9">
+<h2 class="text-center">Invoices<%= link_to 'New Invoice', new_invoice_path,
+  class:"btn btn-outline-success float-right btn-sm" %></h2>
 
-<%= form_tag import_invoices_path, multipart: true do %>  
-  <%= file_field_tag :file %>
-  <%= submit_tag "Import invoices" %>
-<% end %>
-
-<h1>Invoices</h1>
-
-<table>
-  <thead>
+<div class="clear-fix"><br></div>
+<table class="table">
+  <thead class="thead-dark">
     <tr>
       <th>Name</th>
       <th>Num</th>
@@ -26,7 +38,6 @@
         <td><%= invoice.date %></td>
         <td><%= invoice.amount %></td>
         <td><%= link_to 'Show', invoice %></td>
-        <td><%= link_to 'Edit', edit_invoice_path(invoice) %></td>
         <td><%= link_to 'Destroy', invoice, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
@@ -35,4 +46,5 @@
 
 <br>
 
-<%= link_to 'New Invoice', new_invoice_path %>
+</div>
+</div>

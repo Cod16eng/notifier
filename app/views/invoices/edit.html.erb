@@ -1,6 +1,13 @@
-<h1>Editing Invoice</h1>
-
 <%= render 'form', invoice: @invoice %>
 
-<%= link_to 'Show', @invoice %> |
-<%= link_to 'Back', invoices_path %>
+<div class="clear-fix"><br></div>
+
+<div class="row">
+  <div class="col-md-6 d-flex justify-content-center">
+    <%= link_to 'Back', invoices_path, class:"btn btn-outline-secondary btn-sm" %>
+  </div>
+  <div class="col-md-6 d-flex justify-content-center">
+    <%= link_to 'View', @invoice, class:"btn btn-outline-primary btn-sm" %>
+  </div>
+</div>
+<div class="clear-fix"><br></div>

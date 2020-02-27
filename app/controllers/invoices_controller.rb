@@ -4,11 +4,11 @@ class InvoicesController < ApplicationController
   # GET /invoices
   # GET /invoices.json
   def index
-    @invoices = Invoice.all
+    @invoices = Invoice.order('created_at DESC')
   end
 
   def import
-   
+
     Invoice.import(params[:file])
     redirect_to root_path, notice: "Invoices imported"
   end

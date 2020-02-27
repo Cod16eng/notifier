@@ -1,24 +1,26 @@
-<p id="notice"><%= notice %></p>
+<div class="col-8 offset-2">
+  <div class="card">
+    <div class="card-header text-center">
+      <h3><%= @invoice.name %></h3>
+    </div>
+    <div class="card-body">
+      <p class="text-center">
+        <strong>Date:</strong>
+        <%= @invoice.date %>
+      </p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @invoice.name %>
-</p>
-
-<p>
-  <strong>Num:</strong>
-  <%= @invoice.num %>
-</p>
-
-<p>
-  <strong>Date:</strong>
-  <%= @invoice.date %>
-</p>
-
-<p>
-  <strong>Amount:</strong>
-  <%= @invoice.amount %>
-</p>
-
-<%= link_to 'Edit', edit_invoice_path(@invoice) %> |
-<%= link_to 'Back', invoices_path %>
+      <p>
+        <strong>Num:</strong>
+        <%= @invoice.num %>
+      </p>
+      <p class="text-center">
+        <strong>Amount:</strong>
+        <%= @invoice.amount %>
+      </p>
+    </div>
+    <div class="card-footer">
+      <%= link_to 'Back', invoices_path, class:"btn btn-outline-secondary" %>
+      <%= link_to 'Edit', edit_invoice_path(@invoice), class:"btn btn-outline-warning float-right" %>
+    </div>
+  </div>
+</div>
