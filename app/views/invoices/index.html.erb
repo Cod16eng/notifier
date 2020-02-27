@@ -13,10 +13,17 @@
           <%= submit_tag "Import invoices", class:"btn btn-outline-success" %>
         </div>
       <% end %>
+      <div class="clear-fix"><br></div>
+      <div class="text-success text-center">
+        There are <br>
+        <h4><span class="badge badge-info"><%= pluralize(@invoices.count, "invoice")%></span></h4>
+        in the database
+      </div>
+      <div class="clear-fix"><br></div>
   </div>
   <div class="col-9">
-<h2 class="text-center">Invoices<%= link_to 'New Invoice', new_invoice_path,
-  class:"btn btn-outline-success float-right btn-sm" %></h2>
+<h4 class="text-center">Invoices<%= link_to 'New Invoice', new_invoice_path,
+  class:"btn btn-outline-success float-right btn-sm" %></h4>
 
 <div class="clear-fix"><br></div>
 <table class="table">
@@ -37,8 +44,9 @@
         <td><%= invoice.num %></td>
         <td><%= invoice.date %></td>
         <td><%= invoice.amount %></td>
-        <td><%= link_to 'Show', invoice %></td>
-        <td><%= link_to 'Destroy', invoice, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '<i class="fas fa-eye"></i>'.html_safe, invoice, class: "text-success" %></td>
+        <td><%= link_to '<i class="fas fa-times"></i>'.html_safe, invoice,
+           method: :delete, data: { confirm: 'Are you sure?' }, class: "text-danger" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -48,3 +56,4 @@
 
 </div>
 </div>
+<%= will_paginate(@invoices, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer, class: 'justify-content-center d-flex') %>

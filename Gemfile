@@ -29,6 +29,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'figaro'
 gem 'bootstrap', '~> 4.4.1'
 gem 'jquery-rails'
+gem 'font_awesome5_rails', '~> 1.0'
+gem 'bootstrap-will_paginate', '~> 1.0'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'

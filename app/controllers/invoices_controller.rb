@@ -4,7 +4,7 @@ class InvoicesController < ApplicationController
   # GET /invoices
   # GET /invoices.json
   def index
-    @invoices = Invoice.order('created_at DESC')
+    @invoices = Invoice.paginate(page: params[:page], per_page: 12).order('created_at DESC')
   end
 
   def import
