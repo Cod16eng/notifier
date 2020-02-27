@@ -20,6 +20,10 @@
         in the database
       </div>
       <div class="clear-fix"><br></div>
+      <div class="text-warning text-center">
+      <h6>The customer must exists otherwise the import will fail and customer name needs to be identical to invoice name</h6>
+      </div>
+      <div class="clear-fix"><br></div>
   </div>
   <div class="col-9">
 <h4 class="text-center">Invoices<%= link_to 'New Invoice', new_invoice_path,
@@ -43,7 +47,7 @@
         <td><%= invoice.name %></td>
         <td><%= invoice.num %></td>
         <td><%= invoice.date %></td>
-        <td><%= invoice.amount %></td>
+        <td><%= invoice.amount.round(2) %></td>
         <td><%= link_to '<i class="fas fa-eye"></i>'.html_safe, invoice, class: "text-success" %></td>
         <td><%= link_to '<i class="fas fa-times"></i>'.html_safe, invoice,
            method: :delete, data: { confirm: 'Are you sure?' }, class: "text-danger" %></td>

@@ -6,11 +6,12 @@ class Invoice < ApplicationRecord
   def self.import(file)
 
   CSV.foreach(file.path, headers:true, skip_lines: /^(?:,\s*)+$|\b(\w*Total\w*)\b/) do |row|
-    row = row.to_hash
+     row = row.to_hash
     invoice = Invoice.new(row)
     customer = Customer.find_by(name: row['name'])
     invoice.customer = customer if customer.present?
     invoice.save!
+
   end
 end
 

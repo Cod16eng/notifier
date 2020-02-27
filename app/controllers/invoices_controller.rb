@@ -8,7 +8,6 @@ class InvoicesController < ApplicationController
   end
 
   def import
-
     Invoice.import(params[:file])
     redirect_to root_path, notice: "Invoices imported"
   end
