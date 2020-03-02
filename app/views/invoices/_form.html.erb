@@ -29,10 +29,11 @@
           <%= form.label :amount %>
           <%= form.text_field :amount, class:"form-control" %>
         </div>
-     </div>
-      <div class="card-footer  text-center">
-          <%= form.button(@invoice.new_record? ? 'Create Invoice <i class="fas fa-paper-plane"></i>'.html_safe : 'Update invoice <i class="fas fa-paper-plane"></i>'.html_safe, class: 'btn btn-success btn-sm') %>        
+
+      <div class=" text-center">
+          <%= form.button(@invoice.new_record? ? 'Create Invoice <i class="fas fa-paper-plane"></i>'.html_safe : 'Update invoice <i class="fas fa-paper-plane"></i>'.html_safe, class: 'btn btn-success btn-sm') %>
       </div>
+    </div>
       <% end %>
   </div>
 </div>
